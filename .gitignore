@@ -1,0 +1,28 @@
+# Bytecode Python
+__pycache__/
+*.pyc
+
+# Environnements virtuels
+.venv/
+venv/
+
+# Secrets locaux
+.env
+.env.*
+!.env.example
+
+# Base de donnees locale
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Caches d'outils
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+
+# OS
+.DS_Store

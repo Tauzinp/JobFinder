@@ -1,0 +1,99 @@
+# Profils de recherche utilises par le pipeline.
+#
+# Chaque profil contient :
+#   - title_keywords       : mots cles cherches dans le titre de l'offre
+#   - description_keywords : mots cles cherches dans la description de l'offre
+#   - job_types            : types d'offre acceptes (Stage, These, Postdoc,
+#                            Emploi CDD, Concours...). Liste vide = tous les types.
+#   - sites                : sites a parser (doivent exister dans SITES, parameters/config.py)
+#
+# Une offre est conservee si son job_type fait partie de job_types (quand la liste
+# est non vide) ET si un mot cle de titre matche son titre OU si un mot cle de
+# description matche sa description.
+# La comparaison ignore la casse, les espaces et les tirets.
+#
+# Chaque parser est responsable de traduire la nomenclature de son site vers ce
+# vocabulaire commun (voir _parse_job_type dans domains/parsing/parse_sfbi.py).
+#
+# Attention : un mot cle court peut matcher une sous-chaine indesirable
+# (par exemple "ai" matche "mais"). Preferer des mots cles longs et specifiques.
+
+profiles:
+  bioinformatique:
+    job_types:
+      - Stage
+    title_keywords:
+      - bioinformatique
+      - bioinformatics
+      - biostatistique
+      - biostatistics
+      - génomique
+      - genomics
+      - séquençage
+      - sequencing
+      - métagénomique
+      - metagenomics
+      - pipeline
+      - automatisation
+      - machine learning
+      - deep learning
+      - intelligence artificielle
+    description_keywords:
+      - bioinformatique
+      - bioinformatics
+      - bioengineering
+      - génomique
+      - genomics
+      - séquençage
+      - sequencing
+      - métagénomique
+      - metagenomics
+      - biologie
+      - python
+      - rnaseq
+      - transcriptome
+      - protéomique
+      - proteomics
+    sites:
+      - sfbi
+      - wttj
+      - abg
+
+  bioinformatique-these:
+    job_types:
+      - Thèse
+    title_keywords:
+      - bioinformatique
+      - bioinformatics
+      - biostatistique
+      - biostatistics
+      - génomique
+      - genomics
+      - séquençage
+      - sequencing
+      - métagénomique
+      - metagenomics
+      - pipeline
+      - automatisation
+      - machine learning
+      - deep learning
+      - intelligence artificielle
+    description_keywords:
+      - bioinformatique
+      - bioinformatics
+      - bioengineering
+      - génomique
+      - genomics
+      - séquençage
+      - sequencing
+      - métagénomique
+      - metagenomics
+      - biologie
+      - python
+      - rnaseq
+      - transcriptome
+      - protéomique
+      - proteomics
+    sites:
+      - sfbi
+      - abg
